@@ -27,10 +27,10 @@ Route::group(['middleware' => 'auth'], function () {
 	Route::resource('user', UserController::class);
 	Route::get('user', [UserController::class,'index'])->name('user.index');
 	Route::get('profile', [ProfileController::class,'edit'])->name('profile.edit');
-	Route::put('profile',[ProfileController::class,'update'])->name('profile.update');
+	Route::post('profile',[ProfileController::class,'update'])->name('profile.update');
 	Route::get('upgrade', function () {return view('pages.upgrade');})->name('upgrade'); 
 	Route::get('map', function () {return view('pages.maps');})->name('map');
 	Route::get('icons', function () {return view('pages.icons');})->name('icons'); 
 	Route::get('table-list', function () {return view('pages.tables');})->name('table');
-	Route::put('profile/password',[ProfileController::class,'password'])->name('profile.password');
+	Route::post('profile/password',[ProfileController::class,'password'])->name('profile.password');
 });
