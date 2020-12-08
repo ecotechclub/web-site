@@ -321,9 +321,12 @@ Coded by www.creative-tim.com
                 <form action="" method="POST">
                   {{csrf_field()}}
                   <div class="card-header">
-                    <div class="row align-items-center">
+                    <div class="row d-flex">
                       <div class="col-8">
                         <h3 class="mb-0">Formulaire de contact</h3>
+                      </div>
+                      <div class="col-4">
+                        <button type="submit" class="btn btn-sm btn-success float-right">Envoyer</button>
                       </div>
                     </div>
                   </div>
@@ -385,7 +388,7 @@ Coded by www.creative-tim.com
                         </div>
                       </div>
                       <div class="row">
-                          <button type="submit" class="btn btn-primary center">Envoyer</button>
+                          
                       </div>  
                   </div>
                 </form>            
@@ -421,7 +424,7 @@ Coded by www.creative-tim.com
           <div class="row align-items-center justify-content-md-between">
             <div class="col-md-6">
               <div class="copyright">
-                &copy; 2020 <a href="" target="_blank">Creative Tim</a>.
+                &copy; 2020 <a href="" target="_blank">ecotech club</a>.
               </div>
             </div>
             <div class="col-md-6">
