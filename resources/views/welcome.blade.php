@@ -18,9 +18,9 @@ Coded by www.creative-tim.com
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/apple-icon.png">
-  <link rel="icon" type="image/png" href="../assets/img/favicon.png">
+  <link rel="icon" type="image/x-icon" href="{{ asset('argon') }}/img/brand/favicon.ico">
   <title>
-    Argon Design System by Creative Tim
+    ecotech
   </title>
 
   <link rel="stylesheet" href="{{ asset('virb') }}/css/styles-merged.css">
@@ -44,8 +44,8 @@ Coded by www.creative-tim.com
   <!-- Navbar -->
   <nav id="navbar-main" class="navbar navbar-main navbar-expand-lg navbar-transparent navbar-light py-2">
     <div class="container">
-      <a class="navbar-brand mr-lg-5" href="../index.html">
-        <img src="{{ asset('argon') }}/img/brand/ecotech_white.png">
+      <a class="navbar navbar-brand" href="welcome" style="margin-bottom: 6%;"> 
+       <img class="navbar-brand-img" src="{{ asset('argon') }}/img/brand/ecotech_white.png" style="height: 100px; width:100px;">
       </a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar_global" aria-controls="navbar_global" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
