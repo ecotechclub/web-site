@@ -237,7 +237,7 @@ Coded by www.creative-tim.com
               <h4 class="w3-center display-4">{{$event->name}}</h4>
               <div class="w3-row">
                   <div class="w3-col m6 w3-center w3-padding-large">
-                      <img src="http://localhost/images/{{$event->image}}" class="w3-round w3-image" alt="Photo" width="500" height="300">
+                      <img src="{{asset('assets')}}/img/events/{{$event->image}}" class="w3-round w3-image" alt="Photo" width="500" height="300">
                   </div>
 
                   <div class="w3-col m6 w3-center w3-padding-large">
