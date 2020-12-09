@@ -17,12 +17,13 @@ Coded by www.creative-tim.com
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/apple-icon.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/apple-icon.png">
   <link rel="icon" type="image/x-icon" href="{{ asset('argon') }}/img/brand/favicon.ico">
   <title>
     ecotech
   </title>
 
+  <link rel="stylesheet" type="text/css" href="https://www.w3schools.com/w3css/4/w3.css"/>
   <link rel="stylesheet" href="{{ asset('virb') }}/css/styles-merged.css">
   <link rel="stylesheet" href="{{ asset('virb') }}/css/style.min.css">
   <link rel="stylesheet" href="{{ asset('virb') }}/css/custom.css">
@@ -44,7 +45,7 @@ Coded by www.creative-tim.com
   <!-- Navbar -->
   <nav id="navbar-main" class="navbar navbar-main navbar-expand-lg navbar-transparent navbar-light py-2">
     <div class="container">
-      <a class="navbar navbar-brand" href="welcome" style="margin-bottom: 6%;"> 
+      <a class="navbar navbar-brand" href="welcome" style="margin-bottom: 6%;">
        <img class="navbar-brand-img" src="{{ asset('argon') }}/img/brand/ecotech_white.png" style="height: 100px; width:100px;">
       </a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar_global" aria-controls="navbar_global" aria-expanded="false" aria-label="Toggle navigation">
@@ -226,7 +227,41 @@ Coded by www.creative-tim.com
         </div>
       </div>
     </div>
-    
+
+      <div class="w3-content w3-container w3-padding-16" id="events">
+          <h3 class="w3-center display-3">Our Events</h3>
+          <p class="w3-center"><em>We love event!</em></p>
+
+          @foreach ($events as $event)
+              <br>
+              <h4 class="w3-center display-4">{{$event->name}}</h4>
+              <div class="w3-row">
+                  <div class="w3-col m6 w3-center w3-padding-large">
+                      <img src="http://localhost/images/{{$event->image}}" class="w3-round w3-image" alt="Photo" width="500" height="300">
+                  </div>
+
+                  <div class="w3-col m6 w3-center w3-padding-large">
+                      <button onclick="animatedAccordian('1{{$event->id}}')" class="btn w3-block btn-success w3-left-align w3-round" style="margin-bottom: 16px;outline: none;">What is {{$event->name}} ?</button>
+                      <div id="1{{$event->id}}" class="w3-show w3-animate-zoom">
+                          <p>{{$event->description}}</p>
+                      </div>
+
+                      <button onclick="animatedAccordian('2{{$event->id}}')" class="btn w3-block btn-success w3-left-align w3-round" style="margin-bottom: 16px;outline: none;">Where & when ?</button>
+                      <div id="2{{$event->id}}" class="w3-hide w3-animate-zoom">
+                          <p>- {{$event->location}}</p>
+                          <p>- {{$event->date}}</p>
+                      </div>
+
+                      <button onclick="animatedAccordian('3{{$event->id}}')" class="btn w3-block btn-success w3-left-align w3-round" style="margin-bottom: 16px;outline: none;">Who can participate ?</button>
+                      <div id="3{{$event->id}}" class="w3-hide w3-animate-zoom">
+                          <p>{{$event->participation}}</p>
+                      </div>
+                  </div>
+              </div>
+              <br>
+          @endforeach
+      </div>
+
     <div class="probootstrap-animate section section-hero section-shaped">
       <div class="separator separator-bottom mt-3" style="position: relative; padding-bottom:0px;" data-negative="false">
         <div>
@@ -306,148 +341,159 @@ Coded by www.creative-tim.com
         </svg>
       </div>
     </div>
-    <br /><br />
-    <div class="section features-1 mt--2">
-      <div class="container">
 
-      </div>
-    </div>
-    <div class="probootstrap-animate">
-      <footer id="contact" class="footer has-cards">
-        <div class="container container-lg probootstrap-animate">
-          <div class="row justify-content-center mt--6">
-            <div class="col-md-9 mb-5 mb-md-0">
-              <div class="card card-lift--hover shadow border-0">
-                <form action="" method="POST">
-                  {{csrf_field()}}
-                  <div class="card-header">
-                    <div class="row d-flex">
-                      <div class="col-8">
-                        <h3 class="mb-0">Formulaire de contact</h3>
+      <div class="probootstrap-animate">
+          <footer id="contact" class="footer has-cards">
+              <div class="container container-lg probootstrap-animate">
+                  <div class="row justify-content-center mt--6">
+                      <div class="col-md-9 mb-5 mb-md-0">
+                          <div class="card card-lift--hover shadow border-0">
+                              <form action="" method="POST">
+                                  {{csrf_field()}}
+                                  <div class="card-header">
+                                      <div class="row d-flex">
+                                          <div class="col-8">
+                                              <h3 class="mb-0">Formulaire de contact</h3>
+                                          </div>
+                                          <div class="col-4">
+                                              <button type="submit" class="btn btn-sm btn-success float-right">Envoyer</button>
+                                          </div>
+                                      </div>
+                                  </div>
+                                  <div class="card-body">
+                                      @if ($errors->any())
+                                          <div class="alert alert-danger">
+                                              <ul>
+                                                  @foreach ($errors->all() as $error)
+                                                      <li>{{ $error }}</li>
+                                                  @endforeach
+                                              </ul>
+                                          </div>
+                                          <script>
+                                              location.href = "#";
+                                              location.href = "#contact";
+                                          </script>
+                                      @endif
+                                      <h6 class="heading-small text-muted mb-4">Informations de l'utilisateur</h6>
+                                      <div class="pl-lg-4">
+                                          <div class="row">
+                                              <div class="col-lg-6">
+                                                  <div class="form-group">
+                                                      <input type="email" id="input-email" required class="form-control form-control-alternative" placeholder="Adresse e-mail" name="email">
+                                                  </div>
+                                              </div>
+                                              <div class="col-lg-6">
+                                                  <div class="form-group">
+                                                      <input type="text" id="input-username" required class="form-control form-control-alternative" placeholder="Téléphone" name="phone_number">
+                                                  </div>
+                                              </div>
+                                          </div>
+                                          <div class="row">
+                                              <div class="col-lg-6">
+                                                  <div class="form-group">
+                                                      <input type="text" id="input-first-name" required="" class="form-control form-control-alternative" placeholder="Prénom" name="first_name">
+                                                  </div>
+                                              </div>
+                                              <div class="col-lg-6">
+                                                  <div class="form-group">
+                                                      <input type="text" id="input-last-name" required="" class="form-control form-control-alternative" placeholder="Nom" name="last_name">
+                                                  </div>
+                                              </div>
+                                          </div>
+                                      </div>
+                                      <hr class="my-4">
+                                      <!-- Description -->
+                                      <h6 class="heading-small text-muted mb-4">Votre Message</h6>
+                                      <div class="pl-lg-4 row">
+                                          <div class="col-lg-6">
+                                              <div class="form-group">
+                                                  <input type="text" id="input-subject" required="" class="form-control form-control-alternative" placeholder="Sujet" name="subject">
+                                              </div>
+                                          </div>
+                                      </div>
+                                      <div class="pl-lg-4">
+                                          <div class="form-group">
+                                              <textarea id="Messa/ge" onkeyup="countChar(this)" maxlength="1000" rows="4" class="form-control form-control-alternative" required="" placeholder="Message" name="text"></textarea>
+                                              <div id="charNum" class="float-right">0 / 1000</div>
+                                          </div>
+                                      </div>
+                                      <div class="row">
+
+                                      </div>
+                                  </div>
+                              </form>
+                          </div>
                       </div>
-                      <div class="col-4">
-                        <button type="submit" class="btn btn-sm btn-success float-right">Envoyer</button>
-                      </div>
-                    </div>
                   </div>
-                  <div class="card-body">
-                      @if ($errors->any())
-                      <div class="alert alert-danger">
-                          <ul>
-                          @foreach ($errors->all() as $error)
-                              <li>{{ $error }}</li>
-                          @endforeach
+              </div>
+              <br><br>
+          </footer>
+          <footer class="footer">
+              <div class="container probootstrap-animate">
+                  <div class="row row-grid align-items-center mb-5">
+                      <div class="col-lg-6">
+                          <h3 class="text-primary font-weight-light mb-2">Thank you for supporting us!</h3>
+                          <h4 class="mb-0 font-weight-light">Let's get in touch on any of these platforms.</h4>
+                      </div>
+                      <div class="col-lg-6 text-lg-center btn-wrapper">
+                          <button target="_blank" href="https://twitter.com/creativetim" rel="nofollow" class="btn btn-icon-only btn-twitter rounded-circle" data-toggle="tooltip" data-original-title="Follow us">
+                              <span class="btn-inner--icon"><i class="fa fa-twitter"></i></span>
+                          </button>
+                          <button target="_blank" href="https://www.facebook.com/CreativeTim/" rel="nofollow" class="btn-icon-only rounded-circle btn btn-facebook" data-toggle="tooltip" data-original-title="Like us">
+                              <span class="btn-inner--icon"><i class="fab fa-facebook"></i></span>
+                          </button>
+                          <button target="_blank" href="https://dribbble.com/creativetim" rel="nofollow" class="btn btn-icon-only btn-dribbble rounded-circle" data-toggle="tooltip" data-original-title="Follow us">
+                              <span class="btn-inner--icon"><i class="fa fa-dribbble"></i></span>
+                          </button>
+                          <button target="_blank" href="https://github.com/creativetimofficial" rel="nofollow" class="btn btn-icon-only btn-github rounded-circle" data-toggle="tooltip" data-original-title="Star on Github">
+                              <span class="btn-inner--icon"><i class="fa fa-github"></i></span>
+                          </button>
+                      </div>
+                  </div>
+                  <hr>
+                  <div class="row align-items-center justify-content-md-between">
+                      <div class="col-md-6">
+                          <div class="copyright">
+                              &copy; 2020 <a href="" target="_blank">ecotech club</a>.
+                          </div>
+                      </div>
+                      <div class="col-md-6">
+                          <ul class="nav nav-footer justify-content-end">
+                              <li class="nav-item">
+                                  <a href="" class="nav-link" target="_blank">Creative Tim</a>
+                              </li>
+                              <li class="nav-item">
+                                  <a href="" class="nav-link" target="_blank">About Us</a>
+                              </li>
+                              <li class="nav-item">
+                                  <a href="" class="nav-link" target="_blank">Blog</a>
+                              </li>
+                              <li class="nav-item">
+                                  <a href="" class="nav-link" target="_blank">License</a>
+                              </li>
                           </ul>
                       </div>
-                      <script>
-                          location.href = "#";
-                          location.href = "#contact";
-                      </script>
-                      @endif                
-                      <h6 class="heading-small text-muted mb-4">Informations de l'utilisateur</h6>
-                      <div class="pl-lg-4">
-                        <div class="row">
-                          <div class="col-lg-6">
-                            <div class="form-group">
-                              <input type="email" id="input-email" required class="form-control form-control-alternative" placeholder="Adresse e-mail" name="email">
-                            </div>
-                          </div>
-                          <div class="col-lg-6">
-                            <div class="form-group">
-                              <input type="text" id="input-username" required class="form-control form-control-alternative" placeholder="Téléphone" name="phone_number">
-                            </div>
-                          </div>
-                        </div>
-                        <div class="row">
-                          <div class="col-lg-6">
-                            <div class="form-group">
-                              <input type="text" id="input-first-name" required="" class="form-control form-control-alternative" placeholder="Prénom" name="first_name">
-                            </div>
-                          </div>
-                          <div class="col-lg-6">
-                            <div class="form-group">
-                              <input type="text" id="input-last-name" required="" class="form-control form-control-alternative" placeholder="Nom" name="last_name">
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <hr class="my-4">
-                      <!-- Description -->
-                      <h6 class="heading-small text-muted mb-4">Votre Message</h6>
-                      <div class="pl-lg-4 row">
-                        <div class="col-lg-6">
-                          <div class="form-group">
-                            <input type="text" id="input-subject" required="" class="form-control form-control-alternative" placeholder="Sujet" name="subject">
-                          </div>
-                        </div>
-                      </div>
-                      <div class="pl-lg-4">
-                        <div class="form-group">
-                          <textarea id="Messa/ge" onkeyup="countChar(this)" maxlength="1000" rows="4" class="form-control form-control-alternative" required="" placeholder="Message" name="text"></textarea>
-                          <div id="charNum" class="float-right">0 / 1000</div>
-                        </div>
-                      </div>
-                      <div class="row">
-                          
-                      </div>  
                   </div>
-                </form>            
               </div>
-            </div>
-          </div>
-        </div>
-        <br><br>
-      </footer>
-      <footer class="footer">
-        <div class="container probootstrap-animate">
-          <div class="row row-grid align-items-center mb-5">
-            <div class="col-lg-6">
-              <h3 class="text-primary font-weight-light mb-2">Thank you for supporting us!</h3>
-              <h4 class="mb-0 font-weight-light">Let's get in touch on any of these platforms.</h4>
-            </div>
-            <div class="col-lg-6 text-lg-center btn-wrapper">
-              <button target="_blank" href="https://twitter.com/creativetim" rel="nofollow" class="btn btn-icon-only btn-twitter rounded-circle" data-toggle="tooltip" data-original-title="Follow us">
-                <span class="btn-inner--icon"><i class="fa fa-twitter"></i></span>
-              </button>
-              <button target="_blank" href="https://www.facebook.com/CreativeTim/" rel="nofollow" class="btn-icon-only rounded-circle btn btn-facebook" data-toggle="tooltip" data-original-title="Like us">
-                <span class="btn-inner--icon"><i class="fab fa-facebook"></i></span>
-              </button>
-              <button target="_blank" href="https://dribbble.com/creativetim" rel="nofollow" class="btn btn-icon-only btn-dribbble rounded-circle" data-toggle="tooltip" data-original-title="Follow us">
-                <span class="btn-inner--icon"><i class="fa fa-dribbble"></i></span>
-              </button>
-              <button target="_blank" href="https://github.com/creativetimofficial" rel="nofollow" class="btn btn-icon-only btn-github rounded-circle" data-toggle="tooltip" data-original-title="Star on Github">
-                <span class="btn-inner--icon"><i class="fa fa-github"></i></span>
-              </button>
-            </div>
-          </div>
-          <hr>
-          <div class="row align-items-center justify-content-md-between">
-            <div class="col-md-6">
-              <div class="copyright">
-                &copy; 2020 <a href="" target="_blank">ecotech club</a>.
-              </div>
-            </div>
-            <div class="col-md-6">
-              <ul class="nav nav-footer justify-content-end">
-                <li class="nav-item">
-                  <a href="" class="nav-link" target="_blank">Creative Tim</a>
-                </li>
-                <li class="nav-item">
-                  <a href="" class="nav-link" target="_blank">About Us</a>
-                </li>
-                <li class="nav-item">
-                  <a href="" class="nav-link" target="_blank">Blog</a>
-                </li>
-                <li class="nav-item">
-                  <a href="" class="nav-link" target="_blank">License</a>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </footer>
-    </div>
+          </footer>
+      </div>
   </div>
+
+
+  <script>
+      function animatedAccordian(id) {
+          var x = document.getElementById(id);
+          if (x.className.indexOf("w3-show") == -1) {
+              x.className = x.className.replace("w3-hide", "w3-show");
+              for (var i=1;i<=3;i++) {
+                  x = document.getElementById(i.toString()+id[1]);
+                  if ((i.toString()+id[1]!=id) && (x.className.indexOf("w3-hide") == -1)) x.className = x.className.replace("w3-show", "w3-hide");
+              }
+          } else {
+              x.className = x.className.replace("w3-show", "w3-hide");
+          }
+      }
+  </script>
   <!--   Core JS Files   -->
   <script src="../assets/js/core/jquery.min.js" type="text/javascript"></script>
   <script src="../assets/js/core/popper.min.js" type="text/javascript"></script>

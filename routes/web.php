@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\ProfileController; 
+use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\UserController;
 
@@ -17,7 +17,8 @@ use App\Http\Controllers\UserController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    $events = DB::select('SELECT * FROM events ORDER BY date LIMIT 3');
+    return view('welcome',['events'=>$events]);
 });
 Auth::routes();
 
@@ -28,9 +29,9 @@ Route::group(['middleware' => 'auth'], function () {
 	Route::get('user', [UserController::class,'index'])->name('user.index');
 	Route::get('profile', [ProfileController::class,'edit'])->name('profile.edit');
 	Route::put('profile',[ProfileController::class,'update'])->name('profile.update');
-	Route::get('upgrade', function () {return view('pages.upgrade');})->name('upgrade'); 
+	Route::get('upgrade', function () {return view('pages.upgrade');})->name('upgrade');
 	Route::get('map', function () {return view('pages.maps');})->name('map');
-	Route::get('icons', function () {return view('pages.icons');})->name('icons'); 
+	Route::get('icons', function () {return view('pages.icons');})->name('icons');
 	Route::get('table-list', function () {return view('pages.tables');})->name('table');
 	Route::put('profile/password',[ProfileController::class,'password'])->name('profile.password');
 });
