@@ -182,7 +182,7 @@ Coded by www.creative-tim.com
         </div>
       </div>
     </div>
-    <div class="separator separator-buttom mt--2" style="position: relative;">
+    <div class="separator separator-top mt--2" style="position: relative;">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 283.5 27.8">
             <path class="fill-success" d="M283.5,9.7c0,0-7.3,4.3-14,4.6c-6.8,0.3-12.6,0-20.9-1.5c-11.3-2-33.1-10.1-44.7-5.7	s-12.1,4.6-18,7.4c-6.6,3.2-20,9.6-36.6,9.3C131.6,23.5,99.5,7.2,86.3,8c-1.4,0.1-6.6,0.8-10.5,2c-3.8,1.2-9.4,3.8-17,4.7	c-3.2,0.4-8.3,1.1-14.2,0.9c-1.5-0.1-6.3-0.4-12-1.6c-5.7-1.2-11-3.1-15.8-3.7C6.5,9.2,0,10.8,0,10.8V0h283.5V9.7z M260.8,11.3	c-0.7-1-2-0.4-4.3-0.4c-2.3,0-6.1-1.2-5.8-1.1c0.3,0.1,3.1,1.5,6,1.9C259.7,12.2,261.4,12.3,260.8,11.3z M242.4,8.6	c0,0-2.4-0.2-5.6-0.9c-3.2-0.8-10.3-2.8-15.1-3.5c-8.2-1.1-15.8,0-15.1,0.1c0.8,0.1,9.6-0.6,17.6,1.1c3.3,0.7,9.3,2.2,12.4,2.7	C239.9,8.7,242.4,8.6,242.4,8.6z M185.2,8.5c1.7-0.7-13.3,4.7-18.5,6.1c-2.1,0.6-6.2,1.6-10,2c-3.9,0.4-8.9,0.4-8.8,0.5	c0,0.2,5.8,0.8,11.2,0c5.4-0.8,5.2-1.1,7.6-1.6C170.5,14.7,183.5,9.2,185.2,8.5z M199.1,6.9c0.2,0-0.8-0.4-4.8,1.1	c-4,1.5-6.7,3.5-6.9,3.7c-0.2,0.1,3.5-1.8,6.6-3C197,7.5,199,6.9,199.1,6.9z M283,6c-0.1,0.1-1.9,1.1-4.8,2.5s-6.9,2.8-6.7,2.7	c0.2,0,3.5-0.6,7.4-2.5C282.8,6.8,283.1,5.9,283,6z M31.3,11.6c0.1-0.2-1.9-0.2-4.5-1.2s-5.4-1.6-7.8-2C15,7.6,7.3,8.5,7.7,8.6	C8,8.7,15.9,8.3,20.2,9.3c2.2,0.5,2.4,0.5,5.7,1.6S31.2,11.9,31.3,11.6z M73,9.2c0.4-0.1,3.5-1.6,8.4-2.6c4.9-1.1,8.9-0.5,8.9-0.8	c0-0.3-1-0.9-6.2-0.3S72.6,9.3,73,9.2z M71.6,6.7C71.8,6.8,75,5.4,77.3,5c2.3-0.3,1.9-0.5,1.9-0.6c0-0.1-1.1-0.2-2.7,0.2	C74.8,5.1,71.4,6.6,71.6,6.7z M93.6,4.4c0.1,0.2,3.5,0.8,5.6,1.8c2.1,1,1.8,0.6,1.9,0.5c0.1-0.1-0.8-0.8-2.4-1.3	C97.1,4.8,93.5,4.2,93.6,4.4z M65.4,11.1c-0.1,0.3,0.3,0.5,1.9-0.2s2.6-1.3,2.2-1.2s-0.9,0.4-2.5,0.8C65.3,10.9,65.5,10.8,65.4,11.1	z M34.5,12.4c-0.2,0,2.1,0.8,3.3,0.9c1.2,0.1,2,0.1,2-0.2c0-0.3-0.1-0.5-1.6-0.4C36.6,12.8,34.7,12.4,34.5,12.4z M152.2,21.1	c-0.1,0.1-2.4-0.3-7.5-0.3c-5,0-13.6-2.4-17.2-3.5c-3.6-1.1,10,3.9,16.5,4.1C150.5,21.6,152.3,21,152.2,21.1z"></path>
             <path class="fill-success" d="M269.6,18c-0.1-0.1-4.6,0.3-7.2,0c-7.3-0.7-17-3.2-16.6-2.9c0.4,0.3,13.7,3.1,17,3.3	C267.7,18.8,269.7,18,269.6,18z"></path>
@@ -227,41 +227,7 @@ Coded by www.creative-tim.com
         </div>
       </div>
     </div>
-
-      <div class="w3-content w3-container w3-padding-16" id="events">
-          <h3 class="w3-center display-3">Our Events</h3>
-          <p class="w3-center"><em>We love event!</em></p>
-
-          @foreach ($events as $event)
-              <br>
-              <h4 class="w3-center display-4">{{$event->name}}</h4>
-              <div class="w3-row">
-                  <div class="w3-col m6 w3-center w3-padding-large">
-                      <img src="{{asset('assets')}}/img/events/{{$event->image}}" class="w3-round w3-image" alt="Photo" width="500" height="300">
-                  </div>
-
-                  <div class="w3-col m6 w3-center w3-padding-large">
-                      <button onclick="animatedAccordian('1{{$event->id}}')" class="btn w3-block btn-success w3-left-align w3-round" style="margin-bottom: 16px;outline: none;">What is {{$event->name}} ?</button>
-                      <div id="1{{$event->id}}" class="w3-show w3-animate-zoom">
-                          <p>{{$event->description}}</p>
-                      </div>
-
-                      <button onclick="animatedAccordian('2{{$event->id}}')" class="btn w3-block btn-success w3-left-align w3-round" style="margin-bottom: 16px;outline: none;">Where & when ?</button>
-                      <div id="2{{$event->id}}" class="w3-hide w3-animate-zoom">
-                          <p>- {{$event->location}}</p>
-                          <p>- {{$event->date}}</p>
-                      </div>
-
-                      <button onclick="animatedAccordian('3{{$event->id}}')" class="btn w3-block btn-success w3-left-align w3-round" style="margin-bottom: 16px;outline: none;">Who can participate ?</button>
-                      <div id="3{{$event->id}}" class="w3-hide w3-animate-zoom">
-                          <p>{{$event->participation}}</p>
-                      </div>
-                  </div>
-              </div>
-              <br>
-          @endforeach
-      </div>
-
+    
     <div class="probootstrap-animate section section-hero section-shaped">
       <div class="separator separator-bottom mt-3" style="position: relative; padding-bottom:0px;" data-negative="false">
         <div>
@@ -341,8 +307,67 @@ Coded by www.creative-tim.com
         </svg>
       </div>
     </div>
-
-      <div class="probootstrap-animate">
+    <div class="section features-6 section-hero section-shaped">
+      <div class="container w3-padding-10 text-center" id="events">
+          <h3 class="display-3">Our Events</h3>
+          <p class="w3-center"><em>We love event!</em></p>
+          <br>
+          @php($i=0)
+          @php($j=0)
+          @php($event_id=0)
+          @foreach ($events as $event)      
+              <div class="row mb50 probootstrap-animate" data-animate-effect="fadeIn">
+                <div @if(($event_id%2)==0) class="col-lg-6 order-lg-0 transform-perspective-left" @else  class="col-lg-6 order-lg-1 transform-perspective-right" @endif>
+                  <p><img src="{{asset('assets')}}/img/events/{{$event->image}}" alt="{{$event->name}}" class="img-responsive img-fluid shadow-lg" style="max-height: 500px;"></p>
+                </div>
+                <div class="col-lg-6 col-md-12">
+                  <!-- Tabs with icons -->
+                  <div class="mb-3">
+                    <small class="text-uppercase font-weight-bold h5">{{$event->name}}</small>
+                  </div>
+                  <div class="nav-wrapper">
+                    <ul class="nav nav-pills nav-fill flex-column flex-md-row" id="tabs-icons-text-{{$event_id}}" role="tablist">
+                      <li class="nav-item p-1">
+                        @php($i++)
+                        <a class="nav-link mb-sm-3 mb-md-0 active" id="tabs-icons-text-{{$i}}-tab" data-toggle="tab" href="#tabs-icons-text-{{$i}}" role="tab" aria-controls="tabs-icons-text-{{$i}}" aria-selected="true"><i class="ni ni-cloud-upload-96 mr-2"></i>About</a>
+                      </li>
+                      <li class="nav-item p-1">
+                        @php($i++)
+                        <a class="nav-link mb-sm-3 mb-md-0" id="tabs-icons-text-{{$i}}-tab" data-toggle="tab" href="#tabs-icons-text-{{$i}}" role="tab" aria-controls="tabs-icons-text-{{$i}}" aria-selected="false"><i class="ni ni-bell-55 mr-2"></i>Where & when ?</a>
+                      </li>
+                      <li class="nav-item p-1">
+                        @php($i++)
+                        <a class="nav-link mb-sm-3 mb-md-0" id="tabs-icons-text-{{$i}}-tab" data-toggle="tab" href="#tabs-icons-text-{{$i}}" role="tab" aria-controls="tabs-icons-text-{{$i}}" aria-selected="false"><i class="ni ni-calendar-grid-58 mr-2"></i>Who can participate ?</a>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="card shadow">
+                    <div class="card-body" >
+                      <div class="tab-content" id="myTabContent" style="max-height:150px;;overflow-y:scroll;">
+                        @php($j++)
+                        <div class="tab-pane fade active show in" id="tabs-icons-text-{{$j}}" role="tabpanel" aria-labelledby="tabs-icons-text-{{$j}}-tab">
+                          <p>{{$event->description}}</p>
+                        </div>
+                        @php($j++)
+                        <div class="tab-pane fade" id="tabs-icons-text-{{$j}}" role="tabpanel" aria-labelledby="tabs-icons-text-{{$j}}-tab">
+                          <p>- {{$event->location}}</p>
+                          <p>- {{$event->date}}</p>
+                        </div>
+                        @php($j++)
+                        <div class="tab-pane fade" id="tabs-icons-text-{{$j}}" role="tabpanel" aria-labelledby="tabs-icons-text-{{$j}}-tab">
+                          <p>{{$event->participation}}</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              @php($event_id++)
+              <br>
+          @endforeach
+      </div>
+    </div>
+      <div class="section probootstrap-animate">
           <footer id="contact" class="footer has-cards">
               <div class="container container-lg probootstrap-animate">
                   <div class="row justify-content-center mt--6">
@@ -495,21 +520,21 @@ Coded by www.creative-tim.com
       }
   </script>
   <!--   Core JS Files   -->
-  <script src="../assets/js/core/jquery.min.js" type="text/javascript"></script>
-  <script src="../assets/js/core/popper.min.js" type="text/javascript"></script>
-  <script src="../assets/js/core/bootstrap.min.js" type="text/javascript"></script>
-  <script src="../assets/js/plugins/perfect-scrollbar.jquery.min.js"></script>
+  <script src="{{ asset('argon') }}/js/core/jquery.min.js" type="text/javascript"></script>
+  <script src="{{ asset('argon') }}/js/core/popper.min.js" type="text/javascript"></script>
+  <script src="{{ asset('argon') }}/js/core/bootstrap.min.js" type="text/javascript"></script>
+  <script src="{{ asset('argon') }}/js/plugins/perfect-scrollbar.jquery.min.js"></script>
   <!--  Plugin for Switches, full documentation here: http://www.jque.re/plugins/version3/bootstrap.switch/ -->
-  <script src="../assets/js/plugins/bootstrap-switch.js"></script>
+  <script src="{{ asset('argon') }}/js/plugins/bootstrap-switch.js"></script>
   <!--  Plugin for the Sliders, full documentation here: http://refreshless.com/nouislider/ -->
-  <script src="../assets/js/plugins/nouislider.min.js" type="text/javascript"></script>
-  <script src="../assets/js/plugins/moment.min.js"></script>
-  <script src="../assets/js/plugins/datetimepicker.js" type="text/javascript"></script>
-  <script src="../assets/js/plugins/bootstrap-datepicker.min.js"></script>
+  <script src="{{ asset('argon') }}/js/plugins/nouislider.min.js" type="text/javascript"></script>
+  <script src="{{ asset('argon') }}/js/plugins/moment.min.js"></script>
+  <script src="{{ asset('argon') }}/js/plugins/datetimepicker.js" type="text/javascript"></script>
+  <script src="{{ asset('argon') }}/js/plugins/bootstrap-datepicker.min.js"></script>
   <!-- Control Center for Argon UI Kit: parallax effects, scripts for the example pages etc -->
   <!--  Google Maps Plugin    -->
   <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script>
-  <script src="../assets/js/argon-design-system.min.js?v=1.2.2" type="text/javascript"></script>
+  <script src="{{ asset('argon') }}/js/argon-design-system.min.js?v=1.2.2" type="text/javascript"></script>
   <script src="https://cdn.trackjs.com/agent/v3/latest/t.js"></script>
   <script src="{{ asset('virb') }}/js/scripts.min.js"></script>
   <script src="{{ asset('virb') }}/js/main.min.js"></script>
