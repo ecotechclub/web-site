@@ -367,8 +367,7 @@ Coded by www.creative-tim.com
           @endforeach
       </div>
     </div>
-      <div class="section probootstrap-animate">
-          <footer id="contact" class="footer has-cards">
+          <footer id="contact" class="footer has-cards  probootstrap-animate">
               <div class="container container-lg probootstrap-animate">
                   <div class="row justify-content-center mt--6">
                       <div class="col-md-9 mb-5 mb-md-0">
@@ -501,7 +500,7 @@ Coded by www.creative-tim.com
                   </div>
               </div>
           </footer>
-      </div>
+
   </div>
 
 
