@@ -311,7 +311,7 @@ Coded by www.creative-tim.com
       <div class="container w3-padding-10 text-center" id="events">
           <h3 class="display-3">Our Events</h3>
           <p class="w3-center"><em>We love event!</em></p>
-          <br>
+          <br><br><br>
           @php($i=0)
           @php($j=0)
           @php($event_id=0)
